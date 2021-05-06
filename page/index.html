@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css//global.css">
+    <link rel="stylesheet" href="./css/everyday/index.css">
+    <link rel="stylesheet" href="./css/blogArticle/index.css">
+    <link rel="stylesheet" href="./css/rightContent/index.css">
+    <script crossorigin="anonymous" integrity="sha512-PkyFg1MEb/EwsFAqzqvZqWdMT4ItV+E1NgOtfBC9X8UecJcO9bwirD+v/9tJwci4wTNHdNYBk4ev6ceb1hy73g==" src="https://lib.baomitu.com/vue/2.6.12/vue.common.dev.min.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="container">
+                <a href="#">我的个人博客 | 技术博客</a>
+                <ul class="tab">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/sitemap.html">地图</a></li>
+                    <li><a href="/aboutme.html">关于</a></li>
+                    <li><a href="/message.html">留言</a></li>
+                </ul>
+                <div class="inp_area">
+                    <input type="text" placeholder="输入关键字查找">
+                    <button class="search">搜索</button>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="left-content">
+                <!-- 每日一句 -->
+                <div class="every-day" id="every-day">
+                    <span class="every-day-title">
+                        每日一句
+                        <img class="iconfont laba" src="./font/喇叭.svg" alt="">
+                    </span>
+                    <div class="content">
+                        <div class="eng">
+                            {{content}}
+                        </div>
+                        <div class="chi">
+                            <div class="transition">
+                                每天都很好，每天都很开心
+                            </div>
+                            <div class="author">
+                                ----詹姆斯
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-list" id="article-list">
+                    <div class="blog_article" v-for="article in articleList" :key="article.id">
+                        <a :href="article.link" class="article-title">{{ article.title }}</a>
+                        <p class="article-content">
+                            {{ article.content }}
+                        </p>
+                        <div class="article-footer">
+                            发布于<span class="article-time">{{ article.publishTime }}</span>|
+                            浏览<span class="scanNum">({{ article.scanNum }})</span>|
+                            Tags:<span class="article-tags">
+                                <span class="article-tag" v-for="tag in article.tags" :key="tag">{{ tag }}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="random-tags" id="random-tags">
+                    <span class="tags-title title">
+                        随机标签云
+                    </span>
+                    <ul class="tags">
+                        <li class="tag" v-for="tag in randomtags" :key="tag.name"><a :style="tag.style" href="#">{{tag.name}}</a></li>
+                    </ul>
+                </div>
+                <div class="recent-hot" id="recent-hot">
+                    <span class="hot-title title">
+                        最近热门
+                    </span>
+                    <ul class="hots">
+                        <li class="hot"  v-for="(hot,index) in hotList" :key="index"><a :href="hot.link">{{ hot.title }}</a></li> 
+                    </ul>
+                </div>
+                <div class="recent-comment" id="recent-comment">
+                    <span class="comment-title title">
+                        最近评论
+                    </span>
+                    <ul class="comments">
+                        <li class="comment"><a :href="comment.link" :key="index" v-for="(comment,index) in commentList">
+                            <div class="comment-info">
+                                <div class="comment-username">{{ comment.username }}</div>
+                                <div class="comment-time">{{ comment.date }}</div>
+                            </div>
+                            <p class="supple">{{ comment.supple }}</p>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="blogroll" id="blogroll">
+                    <span class="blogroll-title title">
+                        随机标签云
+                    </span>
+                    <ul class="links">
+                        <li class="link"><a href="#">友情链接</a></li>
+                        <li class="link"><a href="#">友情链接</a></li>
+                        <li class="link"><a href="#">友情链接</a></li>
+                        <li class="link"><a href="#">友情链接</a></li>
+                        <li class="link"><a href="#">友情链接</a></li>
+                        <li class="link"><a href="#">友情链接</a></li>
+                        <li class="link"><a href="#">友情链接</a></li>
+                        <li class="link"><a href="#">友情链接</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li>c++</li>
+                <li>java</li>
+                <li>rust</li>
+                <li>go</li>
+                <li>c++</li>
+                <li>java</li>
+                <li>rust</li>
+                <li>go</li>
+                <li>c++</li>
+                <li>java</li>
+                <li>rust</li>
+                <li>go</li>
+                <li>c++</li>
+                <li>java</li>
+                <li>rust</li>
+                <li>go</li>
+            </ul>
+            <p class="copyright">Copyright bala巴拉巴拉</p>
+        </footer>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

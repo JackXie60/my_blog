@@ -1,0 +1,36 @@
+.blog_article{
+    padding: 15px 20px 30px 10px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 2px #aaa,
+    -1px 1px 2px #aaa;
+}
+.article-title{
+    color: #13702b;
+    font-size: 20px;
+    text-decoration: none;
+}
+.article-title:hover{
+    color: #337ab7;
+}
+.article-content{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+.article-footer{
+    background-color: black;
+    color: #fff;
+    position: absolute;
+    bottom: 0px;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    transform: translateX(-10px);
+    padding-left: 15px;
+}
