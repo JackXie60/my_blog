@@ -1,0 +1,18 @@
+.breaddiv{
+    padding: .5rem;
+    border-bottom: 1px solid #eee;
+    background-color: #e1f0ff;
+}
+.breadtitle{
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 1rem;
+}
+.center{
+    text-align: center;
+}
+.detailedcontent{
+    padding: 1.3rem;
+    font-size: 1rem;
+}
+
